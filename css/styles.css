@@ -1,0 +1,823 @@
+/* ========================================================================================================== */
+/* global */
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.button {
+  cursor: pointer;
+  outline: none;
+}
+
+.address {
+  font-style: normal;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  outline: none;
+}
+
+/* Скидаємо встановлені стилі (відступи) в браузері для h1-h6, p, ul, ol, img */
+
+/* ============================================================================================================= */
+/* KOLOR */
+
+:root {
+  --primary-brand-color: #4d5ae5;
+  /* CTAs Focused Active states Links - Призывы к действию Сфокусированные активные состояния Ссылки */
+  --pressed-state-color: #404bbf;
+  /* CTAs - Призывы к действию  */
+  --dark-color: #2e2f42;
+  /* Overlays Shadows Headings - Наложения Тени Заголовки - bgc footer*/
+  --success-color: #31d0aa;
+  /* Valid fields Success messages    - Допустимые поля Сообщения об успехе*/
+  --text-color: #434455;
+  /* Body text    - Основной текст*/
+  --subtle-text-color: #8e8f99;
+  /* Helper text Deemphasized text    - Вспомогательный текст Текст без выделения */
+  --accent-color: #e7e9fc;
+  /* Accent color Hairlines Subtle backgrounds    - Акцентный цвет Линии волос Тонкий фон */
+  --light-color: #f4f4fd;
+  /* Light mode backgrounds Light mode Dialogs/alerts     - Фоны светлого режима Светлый режим Диалоги/оповещения  -  bgc Our Team */
+  --modal-overlay-color: #e7e9fc;
+  /* Overlay  - Наложение*/
+  --hero-background-color: #2e2f42;
+  /* Hero image background    - Фон изображения героя */
+  --hero-text: #fff;
+  /* текст Hero, BGC Body */
+  --radius-butoon: 4px;
+  /* радіус заокруглення кнопок */
+  --gap-column: 24px;
+  --column: 3;
+  --indent-sections: 120px;
+  --transition-duration: 250ms;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --trns-fast: 400ms;
+  --trns-slow: 800ms;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/* ============================================================================================================= */
+/* TEXT */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--hero-text);
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.02em;
+  /* устанавливаем основной фон, цвет и вид шрифта для всей страницы  */
+}
+
+.nav-link,
+.address-item,
+.portfolio-list {
+  color: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  /* устанавливем шрифт */
+}
+
+.social-text {
+  color: var(--hero-text);
+  font-size: 16px;
+  line-height: 1.5;
+  /* устанавливем шрифт*/
+}
+
+.nav-link,
+.social-text {
+  font-weight: 500;
+  /* устанавливем шрифт меню навигации */
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.address-item:hover,
+.address-item:focus {
+  color: var(--pressed-state-color);
+
+  /* устанавливем цвет фона ссылок навигации и адреса при наведении Tab и мышкой*/
+}
+
+.nav,
+.nav-link {
+  color: var(--dark-color);
+  /* устанавливаем цвет шрифта для навигации и второй части лого */
+}
+
+.logo {
+  color: var(--primary-brand-color);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  /* устанавливаем параметры шрифта для лого и цвет для первой части лого */
+}
+
+.logo-second {
+  color: var(--dark-color);
+  /* устанавливаем цвет шрифта для второй части лого */
+}
+
+.page-footer {
+  background-color: var(--dark-color);
+  color: var(--modal-overlay-color);
+
+  /* устанавливаем фон и цвет шрифта футера */
+}
+
+.page-footer .logo-second {
+  color: var(--light-color);
+  /* изменяем цвет шрифта второй части лого в футере */
+}
+
+.hero-headline {
+  width: 496px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 56px;
+  line-height: calc(60 / 56);
+  color: var(--hero-text);
+  letter-spacing: 0.02em;
+  /* устанавливаем параметры шрифта для заголовка Hero */
+}
+
+.page-hero {
+  background-color: var(--hero-background-color);
+}
+
+.hero-button:hover,
+.hero-button:focus {
+  background: var(--pressed-state-color);
+
+  /* устанавливем цвет фона кнопки при наведении Tab и при нажатии мышкой */
+}
+
+.hero-button {
+  background: var(--primary-brand-color);
+  color: var(--hero-text);
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  /* устанавливем цвет шрифта кнопки и меню навигации */
+}
+
+.work,
+.worker,
+.customer {
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--dark-color);
+  /* устанавливаем цвет и пареметры шрифта в секторах What are we doing и Our Team */
+}
+
+.worker-section {
+  background-color: var(--light-color);
+  /* устанавливаем цвет фона в секторе Our Team */
+}
+
+.worker-item {
+  background-color: var(--hero-text);
+  /* устанавливаем цвет фона для фотографий сотрудников в секторе Our Team */
+}
+
+.filters-list {
+  font-weight: 500;
+  font-size: 16px;
+  font-family: inherit;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--primary-brand-color);
+  background: var(--light-color);
+  /* устанавливем цвет и параметры шрифта кнопок в неактивном состоянии  */
+}
+
+.filters-list:hover,
+.filters-list:focus {
+  color: var(--hero-text);
+  background: var(--pressed-state-color);
+  /* устанавливем цвет фона ссылок навигации и адреса при наведении Tab и мышкой*/
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color);
+  /* устанавливаем цвет и пареметры шрифта в тексте параграфов*/
+}
+
+.product .text {
+  color: var(--light-color);
+}
+
+.page-footer .text {
+  color: var(--modal-overlay-color);
+}
+
+.headline {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--dark-color);
+  /* устанавливаем цвет и пареметры шрифта в тексте h3*/
+}
+
+/* ============================================================================================================= */
+/* INDENT TEXT  */
+
+/* global  */
+
+.container {
+  width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* outline: 2px solid red;
+  outline-offset: -2px; */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  /* background-color: var(--hero-text); */
+  /* position: fixed; */
+  /* top: 0;
+  left: 0; */
+  /* width: 100%; */
+}
+
+.page-header {
+  /* min-height: 76px; */
+  border-bottom: 1px solid var(--accent-color);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.no-transparency {
+  background-color: rgba(17, 19, 25, 0.4);
+  /* backdrop-filter: blur(15px); */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  display: block;
+}
+
+.link,
+.button,
+.modal-btn {
+  transition-property: background-color, color, border, fill;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.nav .link,
+.address .link {
+  padding-top: 24px;
+  padding-bottom: 28px;
+  position: relative;
+}
+
+.nav-link.current::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+
+  background-color: var(--pressed-state-color);
+}
+
+.nav-link.current {
+  color: var(--pressed-state-color);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+  margin-left: 76px;
+}
+
+.address {
+  margin-left: auto;
+}
+
+.address-list {
+  display: flex;
+  justify-content: end;
+  column-gap: 40px;
+}
+
+.page-footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.footer-conteiner {
+  display: flex;
+  column-gap: var(--indent-sections);
+  align-items: baseline;
+}
+
+.page-footer .text {
+  margin-top: 16px;
+}
+
+.footer-logo {
+  width: 264px;
+}
+
+.headline {
+  margin-bottom: 8px;
+}
+
+.social-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-cell {
+  width: 40px;
+  height: 40px;
+}
+
+.social-text {
+  margin-bottom: 16px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--light-color);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--success-color);
+}
+
+.social-icon {
+  display: block;
+  fill: currentColor;
+}
+/* ============================================================================== */
+/* PAGE STUDIO */
+
+/* HERO */
+
+.hero {
+  display: block;
+  padding-top: 188px;
+  padding-bottom: 188px;
+  text-align: center;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/Hero/people-office\ 1.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-headline {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-button {
+  padding: 16px 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-butoon);
+  border: none;
+  margin-top: 48px;
+  min-height: 56px;
+  min-width: 169px;
+}
+
+/* SECTION 1 */
+
+.feature-section {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--indent-sections);
+  padding-bottom: var(--indent-sections);
+}
+
+.feature-list {
+  display: flex;
+  column-gap: var(--gap-column);
+}
+
+.feature-item {
+  flex-basis: calc((100% / var(--column)) - var(--gap-column));
+}
+
+.feature-pictures {
+  height: 112px;
+  background: var(--light-color);
+  border-radius: var(--radius-butoon);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icons {
+  display: block;
+}
+/* SECTION 2 */
+
+.work-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: var(--indent-sections);
+}
+
+.work-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 72px;
+  column-gap: var(--gap-column);
+}
+
+/* SECTION 3 */
+
+.worker-section {
+  padding-bottom: var(--indent-sections);
+  padding-top: var(--indent-sections);
+}
+
+.worker {
+  margin-bottom: 72px;
+}
+
+.worker-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--gap-column);
+}
+
+.worker-item {
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.worker-text {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  text-align: center;
+}
+
+.worker-text .text {
+  margin-bottom: 8px;
+}
+
+.worker-link {
+  background-color: var(--primary-brand-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--light-color);
+}
+
+.worker-link:hover,
+.worker-link:focus {
+  background-color: var(--pressed-state-color);
+}
+
+/* SECTION 4 */
+
+.customer-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: var(--indent-sections);
+  padding-top: calc((var(--indent-sections)) + 10px);
+}
+
+.customer-list {
+  display: flex;
+  /* flex-wrap: wrap; */
+  margin-top: 72px;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--gap-column);
+}
+
+.customer-link {
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  color: var(--subtle-text-color);
+  padding: 15px 31px;
+  border: 1px solid var(--subtle-text-color);
+  border-radius: 4px;
+  fill: currentColor;
+}
+
+.customer-link:hover,
+.customer-link:focus {
+  fill: var(--pressed-state-color);
+  border: 1px solid var(--pressed-state-color);
+}
+
+.customer-icon {
+  display: block;
+  border: none;
+}
+/* ============================================================================== */
+/* PAGE PORTFOLIO */
+
+/**
+  |============================
+  | FILTERS
+  |============================
+*/
+
+.portfolio-section {
+  padding-top: 96px;
+  padding-bottom: var(--indent-sections);
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 72px;
+  gap: var(--gap-column);
+}
+
+.filters-button {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border: 1px solid var(--accent-color);
+  border-radius: var(--radius-butoon);
+}
+
+.filters-button:hover,
+.filters-button:focus {
+  background: var(--pressed-state-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border: none;
+}
+/**
+  |============================
+  | FINGER
+  |============================
+*/
+
+.finger-container {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.finger-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--gap-column);
+  row-gap: 48px;
+}
+
+.finger-item {
+  flex-basis: calc((100% / var(--column)) - var(--gap-column));
+}
+
+.finger-text {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 16px;
+  border: 1px solid var(--accent-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+  border-top: none;
+}
+
+.portfolio-list:hover {
+  /* border: 1px solid var(--light-color); */
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+/**
+  |============================
+  | MODAL WINDOW
+  |============================
+*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  transition: opacity var(--trns-fast), visibility var(--trns-fast);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition-delay: var(--transition-duration);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 408px;
+  min-height: 576px;
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  overflow: auto;
+
+  transition: transform 150ms, opacity 150ms;
+  transition-delay: 400ms;
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.backdrop.is-hidden.modal {
+  transform: translate(-50%, -70%);
+  opacity: 0;
+  transition-delay: 0;
+}
+
+/* 
+.modal-icon {
+} */
+
+.modal-btn {
+  background: var(--modal-overlay-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  fill: #000;
+  padding: 0;
+  top: 24px;
+  right: 24px;
+  position: absolute;
+
+  cursor: pointer;
+  outline: none;
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background: var(--pressed-state-color);
+  fill: #fff;
+}
+
+/* OVERLAY */
+
+@keyframes overlay {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  /* 50% {
+    opacity: 0;
+  } */
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes overlay-reverse {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  /* 50% {
+    opacity: 1;
+  } */
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+
+.product {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  padding-right: 32px;
+  padding-left: 32px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  background-color: var(--primary-brand-color);
+}
+
+.portfolio-list:hover .product-overlay {
+  animation: overlay 1000ms ease-out both;
+  visibility: visible;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-list:not(:hover) .product-overlay {
+  animation: overlay-reverse 1000ms ease-out both;
+  visibility: visible;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-list:focus .product-overlay {
+  animation: overlay 1000ms ease-out both;
+  visibility: visible;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
